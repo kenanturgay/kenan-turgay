@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+/* Navbar Container */
+.navbar {
+
+  position: fixed;
+  top: 20px; /* Sayfanın üst kısmına sabitler */
+  left: 50%;
+  transform: translateX(-50%); /* Ortalamak için */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam arka plan */
+  padding: 15px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+  max-width: 60%; /* Sayfanın %60'ı kadar genişlik */
+  backdrop-filter: blur(10px); /* Arka plan buğulandırma */
+  -webkit-backdrop-filter: blur(10px); /* Safari desteği için */
+  z-index: 1000; /* İçeriğin üstünde kalması için */
+  
+}
+
+/* Navbar Links */
+.navbar a {
+  color: #d1d5db;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect */
+.navbar a:hover {
+  background-color: #21252a;
+  color: #ffffff;
+}
+
+/* Active Link Styling */
+.navbar a.active {
+  background-color: #1c2025;
+  color: #ffffff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .navbar {
+    max-width: 85%;
+    padding: 2px 2px;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    max-width: 75%;
+    padding: 5px 5px;
+  }
+    
+  }
+
+
+@media (max-width: 770px) {
+    .navbar {
+      max-width: 65%;
+      padding: 5px 5px;
+      
+    }
+
+  
+}
+
+@media (max-width: 580px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap; /* Küçük ekranlarda dikey hizalama */
+  
+  }
+
+  
+}
+
