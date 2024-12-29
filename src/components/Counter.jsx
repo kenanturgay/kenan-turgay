@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from "../services/store.js";
 
 export default function Counter() {
-    
-  const [count, setCount] = useState(0);
+  const count = useSelector((state) => state.counter.count);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // Sayfa yüklendiğinde sayacı artır
-    setCount((prevCount) => prevCount + 1);
-  }, []);
+    dispatch(increment());
+  }, [dispatch]);
 
   return (
     <div className="fixed top-0 right-0 lg:top-5 lg:right-5 bg-gray-800 text-white p-2 rounded-bl-lg lg:rounded-full shadow-lg z-50">
