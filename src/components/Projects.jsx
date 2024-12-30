@@ -20,19 +20,21 @@ const projects = [
 export default function Projects() {
   return (
     <div className="flex flex-col items-center justify-center mt-12 sm:mt-24 text-white p-4">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-200 mb-8">
-        My Projects From Github
-      </h2>
-      <div className="space-y-8">
-        {projects.map((project, index) => (
-          <ProjectCard
-            key={index}
-            title={project.title}
-            description={project.description}
-            tags={project.tags}
-            image={project.image}
-          />
-        ))}
+      <div className="w-full sm:w-2/4 mt-6">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-200 mb-8">
+          My Projects From Github
+        </h2>
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+              image={project.image}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

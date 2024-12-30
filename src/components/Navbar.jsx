@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,24 +22,24 @@ export default function Navbar() {
         </Button>
       </div>
       <div className={`lg:flex lg:items-center ${isOpen ? "block" : "hidden"} w-full lg:w-auto`}>
-        <a href="#home" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white active:bg-gray-900 active:text-white">
+        <Link to="/" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white active:bg-gray-900 active:text-white">
           Home
-        </a>
-        <a href="#about" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
+        </Link>
+        <Link to="/about" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
           About
-        </a>
-        <a href="#projects" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
+        </Link>
+        <Link to="/projects" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
           Projects
-        </a>
-        <a href="#skills" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
+        </Link>
+        <Link to="/skills" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
           Skills
-        </a>
-        <a href="#experience" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
+        </Link>
+        <Link to="/experience" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
           Experience
-        </a>
-        <a href="#contact" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
+        </Link>
+        <Link to="/contact" onClick={closeMenu} className="block lg:inline-block text-gray-300 text-base font-medium no-underline p-2.5 rounded-lg transition duration-300 hover:bg-gray-800 hover:text-white">
           Contact
-        </a>
+        </Link>
       </div>
     </div>
   );
