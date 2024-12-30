@@ -15,7 +15,7 @@ export const { setCount } = counterSlice.actions;
 
 export const fetchVisitorCount = () => async (dispatch) => {
   try {
-    const response = await axios.get('http://localhost:3001/visitor-count');
+    const response = await axios.get('https://kenan-turgay-backend1.vercel.app/visitor-count');
     dispatch(setCount(response.data.count));
   } catch (error) {
     console.error('Error fetching visitor count:', error);
@@ -24,7 +24,7 @@ export const fetchVisitorCount = () => async (dispatch) => {
 
 export const incrementVisitorCount = () => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:3001/visitor-count');
+    const response = await axios.post('https://kenan-turgay-backend1.vercel.app/visitor-count');
     dispatch(setCount(response.data.count));
   } catch (error) {
     console.error('Error incrementing visitor count:', error);
