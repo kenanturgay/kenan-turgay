@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../services/store.js";
+import { fetchVisitorCount, incrementVisitorCount } from "../services/store";
 
 export default function Counter() {
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Sunucudan mevcut sayacı al
+    dispatch(fetchVisitorCount());
+
     // Sayfa yüklendiğinde sayacı artır
-    dispatch(increment());
+    dispatch(incrementVisitorCount());
   }, [dispatch]);
 
   return (
